@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Blog IT</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Blog IT</h1>
+        </header>
+        <section>
+            <nav>
+                <div class="boton"><a href="#hosting">Hosting Web</a></div>
+                <div class="boton"><a href="#ambientes">Ambientes</a></div>
+                <div class="boton"><a href="#github">GitHub</a></div>
+            </nav>
+            <article>
+                <div class="articlecontent">
+                    <div class="articulos" id="hosting">
+                        <h2>¿Qué es el hosting web y por qué es importante para tu sitio web?</h2>
+                        <p>El hosting web es un servicio que permite a individuos y organizaciones publicar su sitio web en Internet. Es esencial para que cualquier sitio web sea accesible para los usuarios en línea. Sin un servicio de hosting, tu sitio web no podría ser visto por nadie.</p>
+                        <p>Existen diferentes tipos de hosting web:</p>
+                        <ul>
+                            <li>Hosting Compartido</li>
+                            <li>Hosting en VPS</li>
+                            <li>Hosting Dedicado</li>
+                            <li>Hosting en la Nube</li>
+                        </ul>
+                        <p>en esta oportunidad nos centraremos en el <strong>Hosting Compartido (IONOS)</strong> y en el <strong>Hosting VPS</strong></p>
+                        <h3>Hosting Compartido (IONOS)</h3>
+                        <p>Estos son los pasos para conseguirlo:</p>
+                        <ul>
+                            <li>Visita el sitio web de IONOS.</li>
+                            <li>Selecciona el plan de hosting compartido que mejor se adapte a tus necesidades.</li>
+                            <li>Registra un dominio o utiliza uno existente.</li>
+                            <li>Para configurarlo debes:</li>
+                            <ul>
+                                <li>Iniciar sesión en tu cuenta de IONOS.</li>
+                                <li>Acceder al panel de control de hosting.</li>
+                                <li>Subir tus archivos web utilizando el Administrador de Archivos o SFTP.</li>
+                                <li>Configurar bases de datos si es necesario.</li>
+                            </ul>
+                        </ul>
+                        <h3>Hosting VPS</h3>
+                        <p>Estos son los pasos para conseguirlo:</p>
+                        <ul>
+                            <li>Elige un proveedor de hosting VPS (en este caso usamos IONOS).</li>
+                            <li>Selecciona un plan que se ajuste a tus necesidades de recursos.</li>
+                            <li>Configura tu servidor VPS con el sistema operativo y las aplicaciones necesarias.</li>
+                            <li>Para configurarlo debes:</li>
+                            <ul>
+                                <li>Acceder a tu servidor VPS mediante SSH.</li>
+                                <li>Instalar un servidor web (como Apache o Nginx).</li>
+                                <li>Subir tus archivos web al servidor.</li>
+                                <li>Configurar bases de datos y otros servicios según sea necesario.</li>
+                            </ul>
+                        </ul>
+                        <h4>Como crear un Nginx en tu servidor Linux Dist. Ubuntu usando Dockers</h4>
+                        <p>Estos son los pasos para conseguirlo:</p>
+                        <ul>
+                            <li>Instala Docker en tu servidor Ubuntu si aún no lo has hecho.</li>
+                            <li>Crea un archivo Dockerfile para definir la configuración de Nginx.</li>
+                            <li>Construye la imagen de Docker utilizando el comando: <code>docker build -t my-nginx .</code></li>
+                            <li>Ejecuta un contenedor basado en la imagen creada con el comando: <code>docker run -d -p 80:80 my-nginx</code></li>
+                            <li>Sube tus archivos web al contenedor o monta un volumen para servir contenido desde el host.</li>
+                        </ul>
+                    </div>
+                    <div class="articulos" id="ambientes">
+                        <h2>¿Qué son los ambientes de desarrollo, prueba/QA y producción en las Paginas Webs?</h2>
+                        <p>Los ambientes de desarrollo, prueba y producción son entornos separados utilizados en el ciclo de vida del desarrollo de software para garantizar la calidad y estabilidad del software antes de su lanzamiento al público.</p>
+                        <ul>
+                            <li><strong>Ambiente de Desarrollo:</strong> <p>Es donde los desarrolladores escriben y prueban su código. Aquí se realizan cambios frecuentes y se utilizan herramientas de depuración. Este ambiente suele tener configuraciones flexibles para facilitar el desarrollo. el mismo debe ser proporcionado por el proveedor</p></li>
+                            <li><strong>Ambiente de Prueba/QA:</strong><p>También conocido como ambiente de staging, es donde se realizan pruebas de la pagina Web por parte de del area de Negocio e IT si es requerido. Aquí se simulan condiciones reales para identificar errores y asegurar que que la pagina funcione correctamente antes de ser lanzado a producción. Este ambiente es compartido con el proveedor y con el area de IT quien se encargara de realizar las adecuaciones necesarias para la configuración de la Web.</p></li>
+                            <li><strong>Ambiente de Producción:</strong><p>Es el entorno en el que la Pagina Web está disponible para los usuarios finales. Este ambiente debe ser estable, seguro y optimizado para el rendimiento, ya que cualquier problema aquí puede afectar a los usuarios finales, este ambiente es administrado exclusivamente por IT.</p></li>
+                        </ul>
+                        <p>La separación de estos ambientes permite a los equipos de desarrollo trabajar de manera más eficiente y reducir el riesgo de errores en la pagina web final.</p>
+                    </div>
+                    <div class="articulos" id="github">
+                        <h2>GitHub</h2>
+                        <p>GitHub es la herramienta autorizada para el control de versiones de la compañia, por eso los proveedores de desarrollo web deben tener una cuenta en dicha herramienta para poder compartiros los repositorios correspondiente al proyecto que esten realizando para que coloquen alli codigo fuente del desarrollo una vez el proyecto este listo para el paso al ambiente de Pruebas/QA</p>
+                        <h3>¿Cómo usar GitHub para el control de versiones en proyectos de desarrollo web?</h3>
+                        <p>GitHub es una plataforma de alojamiento de código que utiliza Git para el control de versiones. Es ampliamente utilizado en proyectos de desarrollo web para gestionar cambios en el código fuente, colaborar con otros desarrolladores y mantener un historial detallado de modificaciones.</p>
+                        <ul>
+                            <li><strong>Crear un Repositorio:</strong> <p>Inicia sesión en GitHub y crea un nuevo repositorio para tu proyecto web. Puedes hacerlo público o privado según tus necesidades.</p></li>
+                            <li><strong>Clonar el Repositorio:</strong><p>Usa Git para clonar el repositorio en tu máquina local con el comando: <code>git clone [URL del repositorio]</code></p></li>
+                            <li><strong>Hacer Cambios:</strong><p>Realiza cambios en tu código fuente utilizando tu editor de código preferido.</p></li>
+                            <li><strong>Agregar y Confirmar Cambios:</strong><p>Usa los comandos: <code>git add .</code> para agregar todos los cambios y <code>git commit -m "Mensaje de confirmación"</code> para confirmar los cambios con un mensaje descriptivo.</p></li>
+                            <li><strong>Subir Cambios a GitHub:</strong><p>Usa el comando: <code>git push origin main</code> (o la rama correspondiente) para subir tus cambios al repositorio remoto en GitHub.</p></li>
+                            <li><strong>Colaborar con Otros:</strong><p>Utiliza ramas (branches) para trabajar en nuevas características o correcciones sin afectar la rama principal. Puedes crear pull requests para revisar y fusionar cambios.</p></li>
+                            <li><strong>Gestionar Issues:</strong><p>Utiliza la sección de Issues en GitHub para rastrear errores, solicitudes de características y tareas pendientes.</p></li>
+                        </ul>
+                        <p>GitHub facilita la colaboración entre desarrolladores, mejora la gestión del código y ayuda a mantener un historial claro de los cambios realizados en proyectos de desarrollo web.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <h2>Departamento de IT</h2>
+        </footer>
+    </main>
+</body>
+</html>

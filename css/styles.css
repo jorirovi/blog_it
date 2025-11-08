@@ -1,0 +1,115 @@
+/*Preparar los estilos*/
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif, Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 20px;
+}
+header, footer {
+    background-color: #007BFF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+header > h1 {
+    font-size: 1.5em;
+}
+footer > h2 {
+    font-size: 1em;
+}
+section {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    grid-template-areas: "my-nav my-article";
+}
+nav {
+    grid-area: my-nav;
+    background-color: #343a40;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+.boton {
+    margin: 0px 1rem;
+    height: 30px;
+}
+.boton > a {
+    text-decoration: none;
+    color: white;
+}
+.boton:hover {
+    background-color: #495057;
+}
+.boton {
+    margin: 0;
+}
+/*Articulos*/
+article {
+    grid-area: my-article;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.articlecontent {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+.articulos {
+    border: 1px solid #ced4da;
+    padding: 15px;
+    border-radius: 5px;
+}
+.articulos > p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.articulos> ul > li > p {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+/*Estilos para dispositivos pantalla normal*/
+@media (width >= 601px) {
+    section { 
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr;
+        grid-template-areas:
+            "my-nav"
+            "my-article";
+        gap: 1rem;
+    }
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+    }
+    .boton > a{
+        padding: 10px
+    }
+}
