@@ -1,4 +1,4 @@
-/*Preparar los estilos*/
+/*estilos de todas las vistas*/
 * {
     box-sizing: border-box;
 }
@@ -9,15 +9,16 @@ body {
     background-color: #f4f4f4;
 }
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 20px;
+    grid-template-rows: 100px 60px 1fr 100px;
+    gap: 1rem;
+    margin : 20px auto;
+    max-width: 900px;
+    grid-template-areas: "my-header"
+                        "my-menuprincipal"
+                        "my-section"
+                        "my-footer";
 }
 header, footer {
     background-color: #007BFF;
@@ -27,29 +28,88 @@ header, footer {
     justify-content: center;
     border-radius: 5px;
 }
-header > h1 {
-    font-size: 1.5em;
+header {
+    grid-area: my-header;
 }
-footer > h2 {
-    font-size: 1em;
+footer {
+    grid-area: my-footer;
 }
-section {
-    background-color: #e9ecef;
-    padding: 20px;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 10px;
-    grid-template-areas: "my-nav my-article";
-}
-nav {
-    grid-area: my-nav;
-    background-color: #343a40;
-    color: white;
-    border-radius: 5px;
+.menuprincipal {
+    grid-area: my-menuprincipal;
     display: flex;
-    flex-direction: column;
-    padding-top: 50px;
+    background-color: #0c4ed0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: end;
+}
+.botonmini {
+    margin: 0px 1rem;
+    height: 30px;
+}
+.botonm {
+    margin: 0px 1rem;
+    height: 30px;
+}
+.botonmini > a, .botonm > a {
+    text-decoration: none;
+    font-weight: bold;
+}
+.botonmini > a {
+    color: #ffc107;
+}
+.botonm > a {
+    color: white;
+}
+.botonmini > a:hover, .botonm > a:hover {
+    color: #3fc011;
+}
+.sectionprincipal {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++*/
+/*Estilos vista principal*/
+.articleprincipal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+.contenidoarti {
+    border: 1px solid #ced4da;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.contenidoarti > p {
+    text-align: justify;
+    line-height: 1.5;
+    text-indent: 1rem;
+}
+.contenidoarti > ul > li > span {
+    text-align: justify;
+    line-height: 1.5;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++*/
+/*Estilos vista pagina web hosting*/
+.sectionhosting {
+    display: grid;
+    grid-template-columns: 127px 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    grid-template-areas: "my-navmenu my-article";
+}
+.navmenu {
+    grid-area: my-navmenu;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3 , 60px);
+    background-color: #0c4ed0;
+    padding-top: 2rem;
 }
 .boton {
     margin: 0px 1rem;
@@ -58,58 +118,29 @@ nav {
 .boton > a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
-.boton:hover {
-    background-color: #495057;
+.boton > a:hover {
+    color: #3fc011;
 }
-.boton {
-    margin: 0;
-}
-/*Articulos*/
-article {
-    grid-area: my-article;
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+/*estilos de los articulos de la vista de web hosting*/
 .articlecontent {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    max-width: 90%;
+    margin: 10px auto;
 }
 .articulos {
     border: 1px solid #ced4da;
     padding: 15px;
     border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .articulos > p {
-    line-height: 1.6;
     text-align: justify;
-}
-
-.articulos> ul > li > p {
-    line-height: 1.2;
-    text-align: justify;
-}
-
-/*Estilos para dispositivos pantalla normal*/
-@media (width >= 601px) {
-    section { 
-        grid-template-columns: 1fr;
-        grid-template-rows: 60px 1fr;
-        grid-template-areas:
-            "my-nav"
-            "my-article";
-        gap: 1rem;
-    }
-    nav {
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-    }
-    .boton > a{
-        padding: 10px
-    }
+    line-height: 1.5;
+    text-indent: 1rem;
 }
